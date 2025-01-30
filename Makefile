@@ -8,6 +8,10 @@ build:
 # it will only rebuild if there are changes to the Dockerfile or build context.
 	docker-compose build
 
+build_and_up:
+
+	docker-compose up -d --build
+
 # Start the services in the background
 up:
 # This command runs `docker-compose up -d`, which starts the container(s) defined
@@ -51,3 +55,18 @@ clean:
 # This stops all services, removes images (`--rmi all`), deletes volumes,
 # and removes orphaned containers or networks. Use this to reset your environment.
 	docker-compose down --rmi all --volumes --remove-orphans
+
+volume_prune:
+
+	docker volume prune -f
+
+# Database
+
+connect_db:
+# Connect to the database using the `psql` command.
+	docker exec -it mysql-db mysql -uuser -ppassword mydatabase
+
+remove_db:
+
+	docker volume rm myproject_db_data
+

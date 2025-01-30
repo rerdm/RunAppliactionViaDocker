@@ -1,13 +1,18 @@
-# Basis-Image mit Nginx verwenden
-FROM nginx:alpine
+# Use an official PHP + Nginx image
+FROM php:8.2-fpm-alpine
 
-# Standard-Inhalte von Nginx löschen
-RUN rm -rf /usr/share/nginx/html/*
+# Install necessary PHP extensions
+RUN docker-php-ext-install pdo pdo_mysql mysqli
 
-# Eigene Inhalte kopieren
-COPY index.html /usr/share/nginx/html/
-COPY css/style.css /usr/share/nginx/html/
-COPY img/ /usr/share/nginx/html/imgs/
+# Set working directory
+WORKDIR /var/www/html
+
+# Copy application files to the container
+COPY . .
+
+# COPY index.html /usr/share/nginx/html/
+# COPY css/style.css /usr/share/nginx/html/
+# COPY img/ /usr/share/nginx/html/imgs/
 
 # Port 80 freigeben
 EXPOSE 80
