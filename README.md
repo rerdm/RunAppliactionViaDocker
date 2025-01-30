@@ -21,3 +21,11 @@ Now the application can be reached via localhost: https://localhost:8081 (confgi
 ## Stop docker container
 
 To stop the container <code>make down</code> </br>
+
+## Database
+- Check if database is connected <code>docker exec -it mysql-db mysql -uuser -ppassword mydatabase</code></br>
+- Show tables :<code>SHOW TABLES;</code>
+- Create Table via mysql(manual): </br><code>CREATE TABLE input_data (id INT AUTO_INCREMENT PRIMARY KEY, input_text VARCHAR(255) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);</code>
+- Select input form db : <code>SELECT * FROM input_data;</code>
+- Leave mysql :<code>exit</code>
+
