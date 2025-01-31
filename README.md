@@ -5,7 +5,7 @@ After startup you can be reached it locally : https://localhost:8081
 
 ## Preperation  
 1. Clone the repository 
-2. Install [Docker Desktop](#https://www.docker.com/products/docker-desktop/)
+2. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 3. Create Docker file (see example)
 4. Create Docker-compose yaml file (see example)
 5. Create Make (see example)
