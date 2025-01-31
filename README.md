@@ -12,15 +12,17 @@ After startup you can be reached it locally : https://localhost:8081
 
 ## Run docker container
 1. Start the docker (using make commands ): </br>
- Create the img <code>make build</code> </br>
- Start the container <code>make up</code> </br>
- Stop and remove containiers <code>make down</code>
+2. Create the img <code>make build</code> </br>
+3. Start the container <code>make up</code> </br>
+3. Stop and remove containiers <code>make down</code>
+
+
 ## Open the application the container running docker
-Now the application can be reached via localhost: https://localhost:8081 (confgired in Docker-compose.yaml) 
+- Now the application can be reached via localhost: https://localhost:8081 (confgired in Docker-compose.yaml) 
 
 ## Stop docker container
 
-To stop the container <code>make down</code> </br>
+- Stop and remove containiers <code>make down</code></br>
 
 ## Database
 - Check if database is connected <code>docker exec -it mysql-db mysql -uuser -ppassword mydatabase</code></br>
@@ -29,3 +31,4 @@ To stop the container <code>make down</code> </br>
 - Select input form db : <code>SELECT * FROM input_data;</code>
 - Leave mysql :<code>exit</code>
 
+NOTE: All make commands are configurred in the <code>Makefile</code>
